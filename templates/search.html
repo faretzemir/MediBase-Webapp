@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet">
+        <title>
+            Navigation 
+        </title>
+    </head>
+    
+<body>
+    
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            overflow:hidden;
+        }
+    </style>
+
+    <h1>
+        Search for a patient.
+    </h1>
+
+    <div class="logo-link">
+        <a href="http://127.0.0.1:5000/options">
+            <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> 
+        </a>
+    </div>
+
+
+
+    <form class="search-form" id="search-form" action="" method="POST">
+        <div class="title">
+            <h3 class="search-title">Patient Search</h3>
+        </div>
+        
+        <div class="input">
+            <input type="text" name="sr" id="sr" class="search-input" placeholder="..." method="POST">
+        </div>
+        
+        
+        <input type="submit" class="search-button"  value="Search" onclick="window.location.href='http://127.0.0.1:5000/results'">
+
+        
+
+        <div class="radio-buttons">
+            <div class="byname">
+                <input type="radio" id="by-name" name="option" value="1">
+                <label for="by-name"><b>by name</b></label><br>
+            </div>
+            
+            <div class="byic">
+                <input type="radio" id="by-ic" name="option" value="2">
+                <label for="by-ic"><b>by IC/Birth Certificate number</b></label><br>
+            </div>
+
+            <div class="bypatid">
+                <input type="radio" id="by-pat-id" name="option" value="3">
+                <label for="by-pat-id"><b>by patient ID</b></label><br>
+            </div>
+
+            <div class="byvis">
+                <input type="radio" id="by-vis-date" name="option" value="4">
+                <label for="by-vis-date"><b>by past visitation date (YYYY-MM-DD)</b></label><br>
+            </div>
+        </div>
+    </form>
+
+    <h6 class="copyright"> 
+        <b>Blackshore Software Solutions ©2020</b>
+    </h6>
+
+</body>
+    
+
+
+</html>

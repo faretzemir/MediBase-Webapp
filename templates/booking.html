@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet">
+        <title>
+            Book An Appointment 
+        </title>
+    </head>
+    
+    <body>
+        <style>
+            body {
+                background-image: url('/static/background.jpg');
+                background-size: cover;
+                overflow:hidden;
+            }
+        </style>
+
+        <h1>
+            Book an appointment.
+        </h1>
+
+        <form class="booking-form" action="" placeholder="..." method="POST">
+            <div class="patidbook"><label for="pat_id"><b>Patient ID</b></label></div>
+            <div class="form-control13"><input type="text" name="pat_id" id="pat_id" placeholder="..."><br></div>
+
+            <div class="bookdate"><label for="book_date"><b>Booking Date (YYYY-MM-DD)</b></label></div>
+            <div class="form-control14"><input type="text" name="book_date" id="book_date" placeholder="..."><br></div>
+
+            <div class="form-control15"><input type="submit" class="book-button" value="Book Appointment" onclick="window.location.href='http://127.0.0.1:5000/booking'"></div>
+        </form>
+    
+        <div class="logo-link">
+            <a href="http://127.0.0.1:5000/options">
+                <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> 
+            </a>
+        </div>
+
+        {% for message in get_flashed_messages() %}
+            <div class="book-alert">Message: {{ message }}</div>
+        {% endfor %}
+
+        <h6 class="copyright"> 
+            <b>Blackshore Software Solutions ©2020</b>
+        </h6>
+    </body>
+    
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login 
+        </title>
+
+        <meta charset="utf-8">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> <!--linking the MediBase logo to the login page-->
+        </div>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet"> <!--Linking the HK Noto Sans font from google-->
+    </head>
+        
+<body>
+    <style>
+        body {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            overflow:hidden;
+        }
+    </style>
+
+    <form class="login-form" action="" method="POST">
+        <div class="username">
+          <label for="username"
+        class="col-xs-2 col-form-label text-xs-right">Username</label>
+        </div>
+
+        <div class="username-input"> 
+                <input type="text" class="form-control" name="username_input"
+        id="username" placeholder="..." value="{{ request.form.username }}"/>
+        </div>
+
+        <div class="password">
+            <label for="pass-input"
+            class="col-xs-2 col-form-label text-xs-right">Password</label>
+        </div>
+
+        <div class="password-input"> 
+            <input type="password" class="form-control2" name="pwd_input"
+            id="password" placeholder="..." value="{{ request.form.password }}"/>
+        </div>
+
+        <div class="login">
+            <input type="submit" class="login-button" onclick="window.location.href='http://127.0.0.1:5000/options'" value="Login">
+        </div>
+    </form>
+
+
+    {% for message in get_flashed_messages() %}
+        <div 
+        
+        class="login-error">Message: {{ message }}
+            
+        </div>
+    {% endfor %}
+    
+
+    <h6 class="copyright"> 
+            Blackshore Software Solutions ©2020
+    </h6>
+</body>
+
+</html>

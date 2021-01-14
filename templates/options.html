@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet">
+        <title>
+            Menu 
+        </title>
+    </head>
+    
+    <body>
+
+        <style>
+            body {
+                background-image: url('/static/background.jpg');
+                background-size: cover;
+                overflow: hidden;
+            }
+        </style>
+
+        <div class="logo-link">
+            <a href="http://127.0.0.1:5000/options">
+                <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> 
+            </a>
+        </div>
+    
+        <h1>
+            Welcome, Admin.
+            What would you like to do?
+        </h1>
+    
+        <div class="option-buttons" method="POST">
+            <input type="button" class="records-access" onclick="window.location.href='http://127.0.0.1:5000/search'" value="Access Records">
+            <input type="button" class="add-record" onclick="window.location.href='http://127.0.0.1:5000/add-patient'" value="Add Records">
+            <input type="button" class="appt-book" onclick="window.location.href='http://127.0.0.1:5000/booking'" value="Book Appointment">
+            <input type="button" class="view-calendar" onclick="window.location.href='http://127.0.0.1:5000/calendar'" value="View Calendar">
+            <input type="button" class="logout-button" onclick="window.location.href='http://127.0.0.1:5000/'" value="Logout">
+        </div>
+
+        <h6 class="copyright"> 
+            <b>Blackshore Software Solutions ©2020</b>
+        </h6>
+        
+    </body>
+    
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet">
+        <title>
+            New Patient 
+        </title>
+    </head>
+    
+    <body>
+
+        <style>
+            body {
+                background-image: url('/static/background.jpg');
+                background-size: cover;
+                overflow:hidden;
+            }
+        </style>
+
+
+        <h1>
+            Add a patient record.
+        </h1>
+
+        {% for message in get_flashed_messages() %}
+            <div class="record-alert">Message: {{ message }}</div>
+        {% endfor %}
+
+        <form class="patient-form" action="" method="POST">
+          
+            <div class="patname"><label for="pat_name"><b>Name</b></label></div>
+            <div class="form-control3"> <input type="text" name="pat_name" id="pat_name" placeholder="..."><br></div>
+
+            <div class ="patgender"><label for="pat_gender"><b>Gender</b></label></div>
+            <div class="form-control4"><input type="text" name="pat_gender" id="pat_gender" placeholder="..."><br></div>
+
+            <div class="patdob"><label for="pat_dob"><b>Date of Birth (YYYY-MM-DD)</b></label></div>
+            <div class="form-control5"><input type="text" name="pat_dob" id="pat_dob" placeholder="..."><br></div>
+
+            <div class="patage"><label for="pat_age"><b>Age</b></label></div>
+            <div class="form-control6"><input type="text" name="pat_age" id="pat_age" placeholder="..."><br></div>
+
+            <div class="patcont"><label for="pat_cont"><b>Contact No.</b></label></div>
+            <div class="form-control7"><input type="text" name="pat_cont" id="pat_cont" placeholder="..."><br></div>
+
+            <div class="patic"><label for="pat_ic"><b>IC No./Birth Certificate (Without -)</b></label></div>
+            <div class="form-control8"><input type="text" name="pat_ic" id="pat_ic" placeholder="..."><br></div>
+
+            <div class="patlv"><label for="past_visit"><b>Last Visit Date (YYYY-MM-DD)</b></label></div>
+            <div class="form-control9"><input type="text" name="past_visit" id="past_visit" placeholder="..."><br></div>
+
+            <div class="patpm"><label for="past_med"><b>Past Medication</b></label></div>
+            <div class="form-control10"><input type="text" name="past_med" id="past_med" placeholder="..."><br></div>
+
+            <div class="patmed"><label for="med_dose"><b>Medication Dosage</b></label></div>
+            <div class="form-control11"><input type="text" name="med_dose" id="med_dose" placeholder="..."><br></div>
+
+            <div class="form-control12"><input type="submit" class="addp-button" value="Add Record" onclick="window.location.href='http://127.0.0.1:5000/add-patient'"></div>
+
+        </form>
+    
+
+        <div class="logo-link">
+            <a href="http://127.0.0.1:5000/options">
+                <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> 
+            </a>
+        </div>
+
+        <h6 class="copyright"> 
+            <b>Blackshore Software Solutions ©2020</b>
+        </h6>
+
+    </body>
+
+    
+</html>

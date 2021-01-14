@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet">
+        <title>
+            Check Appointment 
+        </title>
+    </head>
+    
+    <body>
+
+        <style>
+            body {
+                background-image: url('/static/background.jpg');
+                background-size: cover;
+                overflow:hidden;
+            }
+        </style>
+
+        <h1>
+            Appointment Calendar
+        </h1>
+
+        <form action="" class="appt-check-form" method="POST">
+            <div class="datecheck"><label for="date-check"><b>Enter Date (YYYY-MM-DD)</b></label></div>
+            <div class="form-control16"><input type="text" name="date-check" id="date-check" placeholder="..."></div>
+            <div class="form-control17"><input type="submit" class="submit-button" value="Check Appointments"></div>
+        </form>
+    
+        <div class="logo-link">
+            <a href="http://127.0.0.1:5000/options">
+                <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> 
+            </a>
+        </div>
+
+        <h6 class="copyright"> 
+            <b>Blackshore Software Solutions ©2020</b>
+        </h6>
+    </body>
+    
+</html>

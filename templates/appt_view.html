@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap" rel="stylesheet">
+        <title>
+            View Appointment 
+        </title>
+    </head>
+    
+    <body>
+
+        <style>
+            body {
+                background-image: url('/static/background.jpg');
+                background-size: cover;
+            }
+        </style>
+
+        <div >
+            <h1 class="search-results">
+                Results listed: [{{ count }}] <br><br><br>
+
+                {% for x in range(count) %}
+                    <p>Patient ID: {{ search[x]['pat_id'] }}</p>
+                    <p>Name      : {{ search[x]['pat_name'] }}</p>
+                    <p>Gender      : {{ search[x]['pat_gender'] }}</p>
+                    <p>Contact No.      : {{ search[x]['pat_contact'] }}</p>
+                    <p>Past Visit      : {{ search[x]['past_visit'] }}</p><br><br>
+            
+                {% endfor %}
+            </h1>
+        </div>
+    
+        <div class="logo-link">
+            <a href="http://127.0.0.1:5000/options">
+                <img src="{{ url_for('static', filename='logo.PNG') }}" alt="MediBase logo"> 
+            </a>
+        </div>
+        
+        <h6 class="copyright"> 
+            <b>Blackshore Software Solutions ©2020</b>
+        </h6>
+    </body>
+    
+</html>
